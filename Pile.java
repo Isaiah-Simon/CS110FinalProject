@@ -45,7 +45,35 @@ public class Pile extends Deck
       pile.add(c2);
    }
    
+   /**
+   getCard
+   @param i The card number that you want
+   @return A Card object
+   */
    
+   public Card getCard(int i)
+   {
+      return pile.get(i);    
+   }
+   
+   /**
+   draw
+   @param i The card number that you want
+   @return A Card object
+   */
+   
+   public Card draw(int i)
+   {
+      Card card = new Card(pile.get(i));  
+      pile.remove(i);
+      return card; 
+   }
+   
+   /**
+   warDraw
+   @param p The pile they are being removed from
+   @return An array of the cards that were removed
+   */
    
    public ArrayList<Card> warDraw(Pile p)
    {
@@ -54,7 +82,7 @@ public class Pile extends Deck
       for(int i=0; i < WAR_CARD_AMOUNT; i++)
       {
          Card c = new Card(p.getCard(p.size()-1));
-         p.removeCard(i);
+         p.draw(p.size()-1);
          cards.add(c);
       }
       
