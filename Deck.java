@@ -19,13 +19,19 @@ public class Deck
    ArrayList<Card> deck = new ArrayList<Card>(); 
 
    /**
-   This constructor creates a deck of cards
+   This constructor creates a new deck of cards
    */
 
    public Deck()
    {
       newDeck();
    }
+   
+   /**
+   newDeck
+   Creates 14 cards for each of the suits
+   and adds it to the deck array
+   */
    
    public void newDeck ()
    {
@@ -48,12 +54,23 @@ public class Deck
          deck.add(c4);
       }
    }
+
+   /**
+   getCard
+   @param i The card number that you want
+   @return A Card object
+   */
    
    public Card getCard(int i)
    {
       return deck.get(i);    
    }
    
+   /**
+   getCard
+   @return An ArrayList of cards
+   */
+  
    public ArrayList<Card> shuffle()
    {
        Collections.shuffle(deck);
@@ -61,9 +78,15 @@ public class Deck
        return deck;
    }
    
-    public String toString()
-    {
-        return deck.toString();
-    }
+   /**
+   toString method
+   @return A string containing the information 
+           of every card in the array
+   */
+   
+   public String toString()
+   {
+       return deck.toString();
+   }
    
 }  
