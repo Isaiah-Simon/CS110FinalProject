@@ -26,6 +26,19 @@ public class Card
       this.rank = rank;
    }
    
+   /**
+   This constructor initializes the rank
+   and suit variable
+   @param rank The cards rank
+   @param suit The cards suit
+   */
+   
+   public Card (Card c)
+   {
+      this.suit = c.getSuit();
+      this.rank = c.getRank();
+   }
+   
    //Mutators are not included as a card cannot be changed after it has been created.
    
    /**
