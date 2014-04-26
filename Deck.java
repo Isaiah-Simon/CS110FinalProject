@@ -66,6 +66,19 @@ public class Deck
    }
    
    /**
+   removeCard
+   @param i The card number that you want
+   @return A Card object
+   */
+   
+   public Card draw(int i)
+   {
+      Card card = new Card(deck.get(i));  
+      deck.remove(i);
+      return card; 
+   }
+   
+   /**
    getCard
    @return An ArrayList of cards
    */
@@ -75,6 +88,16 @@ public class Deck
        Collections.shuffle(deck);
        
        return deck;
+   }
+   
+   /**
+   size
+   @return An int that is the size of the array
+   */
+  
+   public int size()
+   {
+      return deck.size();
    }
    
    /**
