@@ -14,6 +14,8 @@ public class Deck
 { 
    //Declare Constants
    final static int SUIT_CARD_AMOUNT = 14; //The amount of cards in each suit
+   
+   //Declare Variables
    ArrayList<Card> deck = new ArrayList<Card>(); 
 
    /**
@@ -58,5 +60,10 @@ public class Deck
        
        return deck;
    }
+   
+    public String toString()
+    {
+        return deck.toString();
+    }
    
 }  
