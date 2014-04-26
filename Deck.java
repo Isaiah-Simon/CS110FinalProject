@@ -13,7 +13,7 @@ import java.util.Collections;
 public class Deck
 { 
    //Declare Constants
-   final static int SUIT_CARD_AMOUNT = 13; //The amount of cards in each suit
+   final static int SUIT_CARD_AMOUNT = 14; //The amount of cards in each suit
    ArrayList<Card> deck = new ArrayList<Card>(); 
 
    /**
@@ -27,7 +27,7 @@ public class Deck
    
    public void newDeck ()
    {
-      for(int i=2;i<SUIT_CARD_AMOUNT;i++)
+      for(int i=2; i <= SUIT_CARD_AMOUNT; i++)
       {
          //Adding heart cards
          Card c1 = new Card('h',i);
@@ -50,6 +50,13 @@ public class Deck
    public Card getCard(int i)
    {
       return deck.get(i);    
+   }
+   
+   public ArrayList<Card> shuffle()
+   {
+       Collections.shuffle(deck);
+       
+       return deck;
    }
    
 }  
