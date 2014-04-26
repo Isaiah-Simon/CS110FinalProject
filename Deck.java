@@ -47,4 +47,9 @@ public class Deck
       }
    }
    
+   public Card getCard(int i)
+   {
+      return deck.get(i);    
+   }
+   
 }  
