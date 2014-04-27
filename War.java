@@ -86,12 +86,12 @@ public class War
                ArrayList<Card> player2War = player2.warDraw(player2);
                
                //Checks card after 3 pulled face down
-               warCompare = player1War.get(3).compareTo(player2War.get(3));
+               warCompare = player1War.get(1).compareTo(player2War.get(1));
                System.out.println("Three cards drawn faced down");
                
                //Prints out the fourth card that was drawn
-               System.out.println("Player1's fourth card: " + player1War.get(3));
-               System.out.println("Player2's fourth card: " + player2War.get(3));
+               System.out.println("Player1's fourth card: " + player1War.get(1));
+               System.out.println("Player2's fourth card: " + player2War.get(1));
                   
                   if(warCompare == 1)
                   {
