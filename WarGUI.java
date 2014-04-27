@@ -286,7 +286,7 @@ public class WarGUI extends JFrame
             
             
          //Checks card after 1 pulled face down
-         int warCompare = player1War.get(2).compareTo(player2War.get(2));
+         int warCompare = player1War.get((player1War.size()-1)).compareTo(player2War.get((player1War.size()-1)));
          
          //If player 1's card is higher
          if(warCompare == 1)
@@ -299,7 +299,7 @@ public class WarGUI extends JFrame
                     totalCards.remove(i);
                   }
                }
-               catch(IndexOutOfBoundsException IOOBE)
+               catch(IndexOutOfBoundsException exception)
                {
                
                }
@@ -332,7 +332,7 @@ public class WarGUI extends JFrame
                     totalCards.remove(i);
                   }
                }
-               catch(IndexOutOfBoundsException IOOBE)
+               catch(IndexOutOfBoundsException exception)
                {
                
                }
