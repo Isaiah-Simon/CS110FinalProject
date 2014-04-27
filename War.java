@@ -13,6 +13,11 @@ public class War
      Pile player1 = new Pile();
      Pile player2 = new Pile();
      
+     String decision;
+     
+     //Shuffles the deck
+     deck.shuffle();
+     
      //Splits deck into two piles
      for(int i=0; i<52; i+=2)
      {
@@ -24,10 +29,12 @@ public class War
      }
      
      System.out.println("Let the game begin!");
-
      
-     // Create a scanner object  
+     //Asks if the user wants to deal
+     System.out.println("Deal? y/n");
      Scanner in = new Scanner(System.in);
+     decision = in.nextLine();
+     
      
      
    }
