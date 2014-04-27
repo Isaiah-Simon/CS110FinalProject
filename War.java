@@ -5,11 +5,20 @@ import java.util.ArrayList;
 // CS 110
 // War
 
+/**
+   The War class holds the information about a war game object
+*/
+
 public class War
 {
    private Deck deck;
    private Pile player1;
    private Pile player2;
+   
+   /**
+   This constructor initializes the deck, and both player piles
+   It also shuffles the deck and splits the deck into two piles
+   */
    
    public War()
    {
@@ -31,6 +40,8 @@ public class War
      }
 
    }
+   
+   
    
    public Pile getPlayer1Pile()
    {
