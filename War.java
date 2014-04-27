@@ -87,7 +87,7 @@ public class War
    
    public void warAddtoPlayer1(int s, ArrayList p1, ArrayList p2)
    {
-      for(int i=0; i<s; i++)
+      for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
          Card c1 = (Card)obj1;
@@ -102,7 +102,7 @@ public class War
    
    public void warAddtoPlayer2(int s, ArrayList p1, ArrayList p2)
    {
-      for(int i=0; i<s; i++)
+      for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
          Card c1 = (Card)obj1;
@@ -130,6 +130,7 @@ public class War
      Scanner in = new Scanner(System.in);
      decision = in.nextLine();
      
+     
      try
      {
        while((!((w.getPlayer1Pile().isEmpty() && w.getPlayer2Pile().isEmpty())))&& decision.equals("y"))
@@ -139,6 +140,9 @@ public class War
          int compare = w.compareTopCards();
          System.out.println("\nPlayer 1's Card: " + w.getPlayer1TopCard());
          System.out.println("Player 2's Card: " + w.getPlayer2TopCard());
+         
+         System.out.println(w.getPlayer1Size());
+         System.out.println(w.getPlayer2Size());
          //If the player1 card is higher
          if(compare == 1)
          {
@@ -163,7 +167,7 @@ public class War
          while(compare == 0)
          {
             
-            System.out.println("\nWA!!");
+            System.out.println("\nWAR!!");
             System.out.println("Deal for war? y/n");
             decision = in.nextLine();
             
@@ -178,12 +182,12 @@ public class War
                player2War.add(0,w.getPlayer2TopCard());
                
                //Checks card after 3 pulled face down
-               warCompare = player1War.get(1).compareTo(player2War.get(1));
+               warCompare = player1War.get(3).compareTo(player2War.get(3));
                System.out.println("One drawn faced down");
               
                //Prints out the fourth card that was drawn
-               System.out.println("Player1's second card: " + player1War.get(1));
-               System.out.println("Player2's second card: " + player2War.get(1));
+               System.out.println("Player1's second card: " + player1War.get(3));
+               System.out.println("Player2's second card: " + player2War.get(3));
                   
                   if(warCompare == 1)
                   {
@@ -210,7 +214,7 @@ public class War
                   
               }
               
-//               compare = 1;
+              compare = 1;
                            
          }
          
