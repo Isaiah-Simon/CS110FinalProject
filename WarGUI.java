@@ -281,9 +281,8 @@ public class WarGUI extends JFrame
          int test = w.getPlayer1Size();
          int test2 = w.getPlayer2Size();
          
-         message.setText(player1War.get(2).getCardImage());
-         updatePlayer1Image(player1War.get(2));
-         updatePlayer2Image(player2War.get(2));
+         updatePlayer1Image(player1War.get(player1War.size()-1));
+         updatePlayer2Image(player2War.get(player1War.size()-1));
             
             
          //Checks card after 1 pulled face down
