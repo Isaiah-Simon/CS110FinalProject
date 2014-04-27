@@ -41,27 +41,50 @@ public class War
 
    }
    
-   
+   /**
+   getPlayer1Pile
+   @return A pile object from player 1
+   */
    
    public Pile getPlayer1Pile()
    {
       return player1;
    }
    
+   /**
+   getPlayer1Pile
+   @return A pile object from player 2
+   */
+   
    public Pile getPlayer2Pile()
    {
       return player2;
    }
+   
+   /**
+   getPlayer1Size
+   @return An int that is the size of the player 1 pile
+   */
    
    public int getPlayer1Size()
    {
       return player1.size();
    }
    
+   /**
+   getPlayer2Size
+   @return An int that is the size of the player 2 pile
+   */
+   
    public int getPlayer2Size()
    {
       return player2.size();
    }
+   
+   /**
+   getPlayer1TopCard
+   @return A card that is the top card of the pile from pile 1
+   */
    
    public Card getPlayer1TopCard()
    {
@@ -71,6 +94,11 @@ public class War
          return player1.getCard(player1.size()-1);
    }
    
+   /**
+   getPlayer2TopCard
+   @return A card that is the top card of the pile from pile 2
+   */
+   
    public Card getPlayer2TopCard()
    {
       if(player2.isEmpty())
@@ -79,10 +107,20 @@ public class War
          return player2.getCard(player2.size()-1);
    }
    
+   /**
+   compareTopCards
+   @return An int that is the eqauality of the top two cards
+   */
+   
    public int compareTopCards()
    {
       return player1.getCard(player1.size()-1).compareTo(player2.getCard(player2.size()-1));
    }
+   
+   /**
+   addToPlayer1
+   Adds cards player 1 pile
+   */
    
    public void addToPlayer1()
    {
@@ -90,14 +128,27 @@ public class War
        player1.addCard(0,player2.draw(player2.size()-1));
    }
    
+   /**
+   addToPlayer2
+   Adds cards player 2 pile
+   */
+   
    public void addToPlayer2()
    {
        player2.addCard(0,player2.draw(player2.size()-1));
        player2.addCard(0,player1.draw(player1.size()-1));
    }
    
+   /**
+   warAddtoPlayer1
+   @param s an int that is the number of times to loops through
+   @param p1 Array list of pile 1
+   @param p2 Array list of pile 2
+   */
+   
    public void warAddtoPlayer1(int s, ArrayList p1, ArrayList p2)
    {
+      //Adds card to the player 1 pile
       for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
@@ -111,8 +162,16 @@ public class War
       }
    }
    
+   /**
+   warAddtoPlayer2
+   @param s an int that is the number of times to loops through
+   @param p1 Array list of pile 1
+   @param p2 Array list of pile 2
+   */
+   
    public void warAddtoPlayer2(int s, ArrayList p1, ArrayList p2)
    {
+      //Adds card to the player 2 pile
       for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
@@ -186,6 +245,7 @@ public class War
             
             while(warCompare == 0 && decision.equals("y"))
             {
+               //Creates Array Lists for cards for war
                ArrayList<Card> player1War = w.getPlayer1Pile().warDraw(w.getPlayer1Pile());
                player1War.add(0,w.getPlayer1TopCard());
                
