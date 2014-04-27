@@ -12,7 +12,7 @@ import java.util.Collections;
 public class Pile extends Deck
 {  
    //Declare Constants
-   public static int WAR_CARD_AMOUNT = 2;
+   public static int WAR_CARD_AMOUNT = 3;
  
    //Declare Variables
    ArrayList<Card> pile = new ArrayList<Card>(); 
