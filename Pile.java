@@ -36,13 +36,25 @@ public class Pile extends Deck
    
    /**
    addCard
-   @return An int that is the size of the array
+   @param A card that goes to the top of the pile
    */
   
    public void addCard(Card c)
    {
       Card c2 = new Card(c);
       pile.add(c2);
+   }
+   
+   /**
+   addCardTo
+   @param A card that you want to add to the specifc place in the pile
+   @param An int that is where you want the card to be added
+   */
+  
+   public void addCard(int i, Card c)
+   {
+      Card c2 = new Card(c);
+      pile.add(i,c2);
    }
    
    /**
@@ -67,6 +79,16 @@ public class Pile extends Deck
       Card card = new Card(pile.get(i));  
       pile.remove(i);
       return card; 
+   }
+   
+   /**
+   isEmpty
+   @return A boolean if the pile is empty
+   */
+   
+   public boolean isEmpty()
+   {
+       return pile.isEmpty();
    }
    
    /**
