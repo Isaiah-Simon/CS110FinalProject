@@ -17,6 +17,11 @@ import javax.swing.JPanel;
 // CS 110
 // War GUI
 
+
+/**
+   The WarGUI class holds the information about a warGUI object
+*/
+
 public class WarGUI extends JFrame
 {
    private JPanel topPanel;
@@ -34,6 +39,11 @@ public class WarGUI extends JFrame
    private War w;
    
    private ImageIcon cardBackImage;
+   
+   /**
+   This constructor initializes the layout of the GUI. It also adds the 
+   two piles as well as the two hands. It also adds the message label and button
+   */
    
    public WarGUI() throws FileNotFoundException
    {
@@ -75,6 +85,11 @@ public class WarGUI extends JFrame
          
    }
    
+   /**
+   updatePlayer1Image
+   Updates the image for the card the player 1 has drawn
+   */
+   
    private void updatePlayer1Image()
    {
       if(w.getPlayer1Size() != 0)
@@ -88,6 +103,12 @@ public class WarGUI extends JFrame
          warButton.setEnabled(false);
       }
    }
+   
+   /**
+   updatePlayer1Image
+   Updates the image for the card the player 1 has drawn
+   @param c A card object that can be used to set the image
+   */
    
    private void updatePlayer1Image(Card c)
    {
@@ -103,6 +124,11 @@ public class WarGUI extends JFrame
       }
    }
    
+   /**
+   updatePlayer2Image
+   Updates the image for the card the player 2 has drawn
+   */
+   
    private void updatePlayer2Image()
    {
       if(w.getPlayer2Size() != 0)
@@ -116,6 +142,12 @@ public class WarGUI extends JFrame
          warButton.setEnabled(false);
       }
    }
+   
+   /**
+   updatePlayer2Image
+   Updates the image for the card the player 2 has drawn
+   @param c A card object that can be used to set the image
+   */
    
    private void updatePlayer2Image(Card c)
    {
@@ -131,6 +163,11 @@ public class WarGUI extends JFrame
       }
    }
    
+   /**
+   updateMessage
+   Updates the message with both pile sizes
+   */
+   
    public void updateMessage()
    {
       String newMessage =
@@ -142,7 +179,11 @@ public class WarGUI extends JFrame
    }
    
    
-   
+   /**
+   The ButtonListener class holds the information
+   about the action to take when a button is pressed
+   */
+
    private class ButtonListener implements ActionListener
    {
       public void actionPerformed(ActionEvent e) throws ArrayIndexOutOfBoundsException
@@ -198,7 +239,7 @@ public class WarGUI extends JFrame
              }  
              
          }
-         catch (ArrayIndexOutOfBoundsException ex)
+         catch (ArrayIndexOutOfBoundsException ex) //exception means one pile is empty
          {
             if(w.getPlayer1Size() == 0)
             {
@@ -217,6 +258,11 @@ public class WarGUI extends JFrame
          
    }
    
+   /**
+   The WarButtonListener class holds the information
+   about the action to take when a button is pressed
+   */
+   
    private class WarButtonListener implements ActionListener
    {
      ArrayList<Card> totalCards = new ArrayList<Card>();
@@ -225,6 +271,7 @@ public class WarGUI extends JFrame
      {
       try
       {
+         //Creates Array Lists to hold cards for war
          ArrayList<Card> player1War = w.getPlayer1Pile().warDraw(w.getPlayer1Pile());
          player1War.add(0,w.getPlayer1TopCard());
          
@@ -242,6 +289,7 @@ public class WarGUI extends JFrame
          //Checks card after 1 pulled face down
          int warCompare = player1War.get(2).compareTo(player2War.get(2));
          
+         //If player 1's card is higher
          if(warCompare == 1)
             {  
                try
@@ -274,7 +322,7 @@ public class WarGUI extends JFrame
                
 
             }
-            
+            //If player 2's card is higher
             if(warCompare == -1)
             {
                try
@@ -328,7 +376,7 @@ public class WarGUI extends JFrame
                
             } 
       }
-      catch (ArrayIndexOutOfBoundsException warEx)
+      catch (ArrayIndexOutOfBoundsException warEx) //exception means one pile is empty
       {
          if(w.getPlayer1Size() == 0)
          {
@@ -347,6 +395,7 @@ public class WarGUI extends JFrame
    
    public static void main(String[] args) throws FileNotFoundException
    {
+        //Creates new gui
         WarGUI gui;
         try
         {

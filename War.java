@@ -148,6 +148,7 @@ public class War
    
    public void warAddtoPlayer1(int s, ArrayList p1, ArrayList p2)
    {
+      //Adds card to the player 1 pile
       for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
@@ -170,6 +171,7 @@ public class War
    
    public void warAddtoPlayer2(int s, ArrayList p1, ArrayList p2)
    {
+      //Adds card to the player 2 pile
       for(int i=1; i<s; i++)
       {
          Object obj1 = p1.get(i);
@@ -243,6 +245,7 @@ public class War
             
             while(warCompare == 0 && decision.equals("y"))
             {
+               //Creates Array Lists for cards for war
                ArrayList<Card> player1War = w.getPlayer1Pile().warDraw(w.getPlayer1Pile());
                player1War.add(0,w.getPlayer1TopCard());
                
