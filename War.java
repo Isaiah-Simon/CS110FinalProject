@@ -151,14 +151,19 @@ public class War
       //Adds card to the player 1 pile
       for(int i=1; i<s; i++)
       {
-         Object obj1 = p1.get(i);
-         Card c1 = (Card)obj1;
+         if(i<p1.size())
+         {
+            Object obj1 = p1.get(0);
+            Card c1 = (Card)obj1;
+            player1.addCard(0,c1);
+         }
          
-         Object obj2 = p2.get(i);
-         Card c2 = (Card)obj2;
-         
-         player1.addCard(0,c1);
-         player1.addCard(0,c2);
+         if(i<p2.size())
+         {
+            Object obj2 = p2.get(0);
+            Card c2 = (Card)obj2;
+            player1.addCard(0,c2);
+         }
       }
    }
    
@@ -174,14 +179,19 @@ public class War
       //Adds card to the player 2 pile
       for(int i=1; i<s; i++)
       {
-         Object obj1 = p1.get(i);
-         Card c1 = (Card)obj1;
+         if(i<p1.size())
+         {
+            Object obj1 = p1.get(0);
+            Card c1 = (Card)obj1;
+            player2.addCard(0,c1);
+         }
          
-         Object obj2 = p2.get(i);
-         Card c2 = (Card)obj2;
-         
-         player2.addCard(0,c1);
-         player2.addCard(0,c2);
+         if(i<p2.size())
+         {
+            Object obj2 = p2.get(0);
+            Card c2 = (Card)obj2;
+            player2.addCard(0,c2);
+         }
       }
    }
    

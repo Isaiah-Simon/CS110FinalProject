@@ -364,6 +364,8 @@ public class WarGUI extends JFrame
           			+ "</html>";
          
                message.setText(newMessage);
+               int p1Size = player1War.size();
+               int p2Size = player2War.size();
                
                //Adds into an array so the cards don't disappear between different wars
                for(int i = 0; i<player1War.size(); i++)
@@ -388,6 +390,8 @@ public class WarGUI extends JFrame
             message.setText("Player 1 wins the game!");
             warButton.setEnabled(false);  
          }
+         
+         
       }
      }         
    }
