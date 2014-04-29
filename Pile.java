@@ -25,7 +25,6 @@ public class Pile extends Deck
    }
    
    /**
-   size
    @return An int that is the size of the array
    */
   
@@ -35,7 +34,6 @@ public class Pile extends Deck
    }
    
    /**
-   addCard
    @param A card that goes to the top of the pile
    */
   
@@ -46,7 +44,6 @@ public class Pile extends Deck
    }
    
    /**
-   addCardTo
    @param A card that you want to add to the specifc place in the pile
    @param An int that is where you want the card to be added
    */
@@ -58,7 +55,6 @@ public class Pile extends Deck
    }
    
    /**
-   getCard
    @param i The card number that you want
    @return A Card object
    */
@@ -69,7 +65,6 @@ public class Pile extends Deck
    }
    
    /**
-   draw
    @param i The card number that you want
    @return A Card object
    */
@@ -82,7 +77,6 @@ public class Pile extends Deck
    }
    
    /**
-   isEmpty
    @return A boolean if the pile is empty
    */
    
@@ -92,7 +86,6 @@ public class Pile extends Deck
    }
    
    /**
-   warDraw
    @param p The pile they are being removed from
    @return An array of the cards that were removed
    */
@@ -112,7 +105,6 @@ public class Pile extends Deck
    }
    
    /**
-   toString method
    @return A string containing the information 
            of every card in the array
    */

@@ -86,7 +86,6 @@ public class WarGUI extends JFrame
    }
    
    /**
-   updatePlayer1Image
    Updates the image for the card the player 1 has drawn
    */
    
@@ -105,7 +104,6 @@ public class WarGUI extends JFrame
    }
    
    /**
-   updatePlayer1Image
    Updates the image for the card the player 1 has drawn
    @param c A card object that can be used to set the image
    */
@@ -125,7 +123,6 @@ public class WarGUI extends JFrame
    }
    
    /**
-   updatePlayer2Image
    Updates the image for the card the player 2 has drawn
    */
    
@@ -144,7 +141,6 @@ public class WarGUI extends JFrame
    }
    
    /**
-   updatePlayer2Image
    Updates the image for the card the player 2 has drawn
    @param c A card object that can be used to set the image
    */
@@ -164,7 +160,6 @@ public class WarGUI extends JFrame
    }
    
    /**
-   updateMessage
    Updates the message with both pile sizes
    */
    

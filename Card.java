@@ -47,7 +47,6 @@ public class Card
    //Mutators are not included as a card cannot be changed after it has been created.
    
    /**
-      getSuit method
       @return An int containing the suit of the card.
    */
    
@@ -57,7 +56,6 @@ public class Card
    }
    
    /**
-      getRank method
       @return An int containing the rank of the card.
    */
    
@@ -68,7 +66,6 @@ public class Card
    
    
    /**
-      setCardImage
       @param suit A character that is the suit
       @param rank An int that is the rank
    */
@@ -102,7 +99,6 @@ public class Card
    }
    
    /**
-      setCardImage
       @param c A card that contains rank and suit
    */
    
@@ -135,7 +131,6 @@ public class Card
    }
    
    /**
-   getCardImage
    @return An string of the image for the card
    */
    
@@ -147,7 +142,6 @@ public class Card
    
    
    /**
-      toString method
       @return A string indicating the object's
               suit and rank
               Ex: 4c = Four of clubs
@@ -190,7 +184,7 @@ public class Card
    }
    
    /**
-    compareTo method is used to compare two card objects based on their rank.
+    Used to compare two card objects based on their rank.
     @return A number based on the comparisions of the cards. If it is 1, this card object is higher.
     If it is -1, the other card object is higher. If it is 0, they are the same rank.
    */

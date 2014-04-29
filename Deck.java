@@ -27,7 +27,6 @@ public class Deck
    }
    
    /**
-   newDeck
    Creates 14 cards for each of the suits
    and adds it to the deck array
    */
@@ -55,7 +54,6 @@ public class Deck
    }
 
    /**
-   getCard
    @param i The card number that you want
    @return A Card object
    */
@@ -66,7 +64,6 @@ public class Deck
    }
    
    /**
-   removeCard
    @param i The card number that you want
    @return A Card object
    */
@@ -79,7 +76,6 @@ public class Deck
    }
    
    /**
-   getCard
    @return An ArrayList of cards
    */
   
@@ -91,7 +87,6 @@ public class Deck
    }
    
    /**
-   size
    @return An int that is the size of the array
    */
   
@@ -101,7 +96,6 @@ public class Deck
    }
    
    /**
-   toString method
    @return A string containing the information 
            of every card in the array
    */

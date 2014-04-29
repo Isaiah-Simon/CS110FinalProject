@@ -42,7 +42,6 @@ public class War
    }
    
    /**
-   getPlayer1Pile
    @return A pile object from player 1
    */
    
@@ -52,7 +51,6 @@ public class War
    }
    
    /**
-   getPlayer1Pile
    @return A pile object from player 2
    */
    
@@ -62,7 +60,6 @@ public class War
    }
    
    /**
-   getPlayer1Size
    @return An int that is the size of the player 1 pile
    */
    
@@ -72,7 +69,6 @@ public class War
    }
    
    /**
-   getPlayer2Size
    @return An int that is the size of the player 2 pile
    */
    
@@ -82,7 +78,6 @@ public class War
    }
    
    /**
-   getPlayer1TopCard
    @return A card that is the top card of the pile from pile 1
    */
    
@@ -95,7 +90,6 @@ public class War
    }
    
    /**
-   getPlayer2TopCard
    @return A card that is the top card of the pile from pile 2
    */
    
@@ -108,7 +102,6 @@ public class War
    }
    
    /**
-   compareTopCards
    @return An int that is the eqauality of the top two cards
    */
    
@@ -118,7 +111,6 @@ public class War
    }
    
    /**
-   addToPlayer1
    Adds cards player 1 pile
    */
    
@@ -129,7 +121,6 @@ public class War
    }
    
    /**
-   addToPlayer2
    Adds cards player 2 pile
    */
    
@@ -140,7 +131,6 @@ public class War
    }
    
    /**
-   warAddtoPlayer1
    @param s an int that is the number of times to loops through
    @param p1 Array list of pile 1
    @param p2 Array list of pile 2
@@ -168,7 +158,6 @@ public class War
    }
    
    /**
-   warAddtoPlayer2
    @param s an int that is the number of times to loops through
    @param p1 Array list of pile 1
    @param p2 Array list of pile 2
