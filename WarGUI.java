@@ -273,16 +273,14 @@ public class WarGUI extends JFrame
       {
          //Creates Array Lists to hold cards for war
          ArrayList<Card> player1War = w.getPlayer1Pile().warDraw(w.getPlayer1Pile());
-         player1War.add(0,w.getPlayer1TopCard());
          
          ArrayList<Card> player2War = w.getPlayer2Pile().warDraw(w.getPlayer2Pile());
-         player2War.add(0,w.getPlayer2TopCard());
          
          int test = w.getPlayer1Size();
          int test2 = w.getPlayer2Size();
          
          updatePlayer1Image(player1War.get(player1War.size()-1));
-         updatePlayer2Image(player2War.get(player1War.size()-1));
+         updatePlayer2Image(player2War.get(player2War.size()-1));
             
             
          //Checks card after 1 pulled face down
@@ -293,10 +291,11 @@ public class WarGUI extends JFrame
             {  
                try
                {
-                  for(int i = 0; i<totalCards.size(); i++)
+                  int tcSize = totalCards.size();
+                  while(totalCards.get(0) != null)
                   {
-                    player1War.add(totalCards.get(i));
-                    totalCards.remove(i);
+                    player1War.add(totalCards.get(0));
+                    totalCards.remove(0);
                   }
                }
                catch(IndexOutOfBoundsException exception)
@@ -326,10 +325,11 @@ public class WarGUI extends JFrame
             {
                try
                {
-                  for(int i = 0; i<totalCards.size(); i++)
+                  int tcSize = totalCards.size();
+                  while(totalCards.get(0) != null)
                   {
-                    player2War.add(totalCards.get(i));
-                    totalCards.remove(i);
+                    player2War.add(totalCards.get(0));
+                    totalCards.remove(0);
                   }
                }
                catch(IndexOutOfBoundsException exception)
@@ -338,7 +338,7 @@ public class WarGUI extends JFrame
                }
             
                //Takes cards from piles and adds to player2 pile
-               w.warAddtoPlayer2(player1War.size(),player1War,player2War);
+               w.warAddtoPlayer2(player2War.size(),player1War,player2War);
                   
                message.setText("Player 2 wins the war");
                String newMessage =
@@ -356,6 +356,7 @@ public class WarGUI extends JFrame
             //Continues war if needed
             if(warCompare == 0)
             {
+            
                message.setText("The war continues");
                
                String newMessage =
@@ -368,14 +369,19 @@ public class WarGUI extends JFrame
                int p2Size = player2War.size();
                
                //Adds into an array so the cards don't disappear between different wars
-               for(int i = 0; i<player1War.size(); i++)
+               for(int i = 0; i<p1Size; i++)
                {
                   totalCards.add(player1War.get(i));
-                  totalCards.add(player2War.get(i));
+               }
+               
+               for(int i = 0; i<p2Size; i++)
+               {
+                  totalCards.add(player1War.get(i));
                }
                
                
             } 
+            
       }
       catch (ArrayIndexOutOfBoundsException warEx) //exception means one pile is empty
       {

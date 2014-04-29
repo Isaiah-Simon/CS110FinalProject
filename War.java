@@ -149,7 +149,7 @@ public class War
    public void warAddtoPlayer1(int s, ArrayList p1, ArrayList p2)
    {
       //Adds card to the player 1 pile
-      for(int i=1; i<s; i++)
+      for(int i=0; i<s; i++)
       {
          if(i<p1.size())
          {
@@ -177,7 +177,7 @@ public class War
    public void warAddtoPlayer2(int s, ArrayList p1, ArrayList p2)
    {
       //Adds card to the player 2 pile
-      for(int i=1; i<s; i++)
+      for(int i=0; i<s; i++)
       {
          if(i<p1.size())
          {
@@ -210,7 +210,8 @@ public class War
      Scanner in = new Scanner(System.in);
      decision = in.nextLine();
      
-     
+     ArrayList<Card> totalCards = new ArrayList<Card>();
+  
      try
      {
        while((!((w.getPlayer1Pile().isEmpty() && w.getPlayer2Pile().isEmpty())))&& decision.equals("y"))
@@ -221,8 +222,8 @@ public class War
          System.out.println("\nPlayer 1's Card: " + w.getPlayer1TopCard());
          System.out.println("Player 2's Card: " + w.getPlayer2TopCard());
          
-         System.out.println(w.getPlayer1Size());
-         System.out.println(w.getPlayer2Size());
+         System.out.println("Player 1's pile size: " + w.getPlayer1Size());
+         System.out.println("Player 2's pile size: " + w.getPlayer2Size());
          //If the player1 card is higher
          if(compare == 1)
          {
@@ -272,13 +273,45 @@ public class War
                   
                   if(warCompare == 1)
                   {
+                     //Checks if there are cards left over from last war
+                     try
+                     {
+                        int tcSize = totalCards.size();
+                        while(totalCards.get(0) != null)
+                        {
+                          player1War.add(totalCards.get(0));
+                          totalCards.remove(0);
+                        }
+                     }
+                     catch(IndexOutOfBoundsException exception)
+                     {
+                     
+                     }
+                  
                      //Takes cards from piles and adds to player1 pile
                      w.warAddtoPlayer1(player1War.size(),player1War,player2War);
+
                      System.out.println("\nPlayer 1 wins the war");
                   }
                   
                   if(warCompare == -1)
                   {
+                     //Checks if there are cards left over from last war
+                     try
+                     {
+                        int tcSize = totalCards.size();
+                        while(totalCards.get(0) != null)
+                        {
+                          player2War.add(totalCards.get(0));
+                          totalCards.remove(0);
+                        }
+                     }
+                     catch(IndexOutOfBoundsException exception)
+                     {
+                     
+                     }
+
+                  
                      //Takes cards from piles and adds to player2 pile
                      w.warAddtoPlayer2(player1War.size(),player1War,player2War);
                      
@@ -288,6 +321,21 @@ public class War
                   //Continues war if needed
                   if(warCompare == 0)
                   {
+                     int p1Size = player1War.size();
+                     int p2Size = player2War.size();
+                     
+                     //Adds into an array so the cards don't disappear between different wars
+                     for(int i = 0; i<p1Size; i++)
+                     {
+                        totalCards.add(player1War.get(i));
+                     }
+                     
+                     for(int i = 0; i<p2Size; i++)
+                     {
+                        totalCards.add(player1War.get(i));
+                     }
+
+                  
                      System.out.println("\nThe War continues");
                      System.out.println("Deal for war? y/n");                
                      decision = in.nextLine();
